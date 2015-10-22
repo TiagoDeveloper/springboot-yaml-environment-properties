@@ -1,5 +1,8 @@
 package xyz.deepzeafish;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
@@ -8,50 +11,41 @@ import org.springframework.context.annotation.Configuration;
 @EnableConfigurationProperties
 @ConfigurationProperties
 public class MyConfig {
-	private String name;
-	private String env;
-	private String randomBytes;
-	private int randomInt;
-	private long randomLong;
+    private String name;
+    private String env;
+    private List<String> servers = new ArrayList<String>();
+    private List<Integer> numbers = new ArrayList<Integer>();
 
-	public String getName() {
-		return name;
-	}
+    public List<Integer> getNumbers() {
+        return numbers;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setNumbers(List<Integer> numbers) {
+        this.numbers = numbers;
+    }
 
-	public String getEnv() {
-		return env;
-	}
+    public List<String> getServers() {
+	return servers;
+    }
 
-	public void setEnv(String env) {
-		this.env = env;
-	}
+    public void setServers(List<String> servers) {
+	this.servers = servers;
+    }
 
-	public String getRandomBytes() {
-		return randomBytes;
-	}
+    public String getName() {
+	return name;
+    }
 
-	public void setRandomBytes(String randomBytes) {
-		this.randomBytes = randomBytes;
-	}
+    public void setName(String name) {
+	this.name = name;
+    }
 
-	public int getRandomInt() {
-		return randomInt;
-	}
+    public String getEnv() {
+	return env;
+    }
 
-	public void setRandomInt(int randomInt) {
-		this.randomInt = randomInt;
-	}
-
-	public long getRandomLong() {
-		return randomLong;
-	}
-
-	public void setRandomLong(long randomLong) {
-		this.randomLong = randomLong;
-	}
+    public void setEnv(String env) {
+	this.env = env;
+    }
 
 }
